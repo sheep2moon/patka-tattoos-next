@@ -6,7 +6,7 @@ import { FaInstagramSquare, FaFacebook } from "react-icons/fa";
 import { GoMail } from "react-icons/go";
 import Moth from "../components/moth";
 import ImagesGallery from "../components/images-gallery";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useScroll, motion, useTransform, useMotionValueEvent } from "framer-motion";
 import { Lamp } from "../components/lamp";
 import ContactSection from "../components/contact-section";

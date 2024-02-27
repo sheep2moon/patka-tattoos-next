@@ -32,10 +32,9 @@ type ImagesGalleryProps = {
 
 const ImagesGallery = (props: ImagesGalleryProps) => {
     const translateY = useTransform(props.scrollYProgress, [0, 1], [0, -400]);
-    const scale = useTransform(props.scrollYProgress, [0, 1], [0.8, 1]);
     const opacity = useTransform(props.scrollYProgress, [0, 1], [0.6, 1]);
     return (
-        <motion.div style={{ scale, translateY, opacity }} className="-mb-[200px]">
+        <motion.div style={{ translateY, opacity }} className="-mb-[200px]">
             <div className="mx-auto flex gap-1 w-screen max-w-3xl">
                 <div className="w-1/2 grid grid-cols-1 lg:grid-cols-2 gap-1">
                     {lineImages.map((src, index) => (
@@ -55,7 +54,7 @@ const ImagesGallery = (props: ImagesGalleryProps) => {
 const TattooImage = ({ src }: { src: StaticImageData }) => {
     return (
         <div className="relative w-full aspect-square rounded-sm overflow-hidden">
-            <Image sizes="256 256" placeholder="blur" src={src} alt="tattoo" fill />
+            <Image loading="lazy" sizes="256 256" placeholder="blur" src={src} alt="tattoo" fill />
         </div>
     );
 };
