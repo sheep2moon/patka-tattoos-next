@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Patka Tattoos",
     description: "Strona osobista Patka Tattoos. Studio tatuażu",
     openGraph: {
-        images: "/moth.jpg"
+        images: "/moth.png"
     }
 };
 
