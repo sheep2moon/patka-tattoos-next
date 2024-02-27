@@ -23,9 +23,9 @@ export default function Home() {
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-center ">
-            <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+            <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-gradient-to-b from-stone-950 to-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
             <div className="bg-dot-gold/[0.2] w-full">
-                <motion.div style={{ scale, translateY }} className="flex flex-col items-center min-h-screen justify-center  w-full" ref={heroContainer}>
+                <motion.div style={{ scale, translateY }} className="flex flex-col items-center min-h-screen justify-center w-full" ref={heroContainer}>
                     <Moth />
                     <div className="w-screen max-w-xl mx-auto flex justify-center">
                         <TextAnim />

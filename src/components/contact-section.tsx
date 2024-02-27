@@ -16,8 +16,8 @@ const ContactSection = () => {
     const translateY = useTransform(scrollYProgress, [0, 1], [400, 0]);
 
     return (
-        <motion.div style={{ translateY }} ref={contactContainer} className="w-screen -mt-[400px] h-screen max-w-full bg-black overflow-hidden flex justify-center items-center text-gold relative">
-            <div className="max-w-full pointer-events-none bg-grid-small-gold/20 absolute inset-0"></div>
+        <motion.div style={{ translateY }} ref={contactContainer} className="w-screen -mt-[400px] h-screen max-w-full bg-gradient-to-b from-black to-stone-950 overflow-hidden flex justify-center items-center text-gold relative">
+            <div className="max-w-full pointer-events-none bg-dot-gold/20 absolute inset-0"></div>
             <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
             <div className="flex flex-col gap-6">
                 <h2 className="text-2xl font-bold">Kontakt</h2>
