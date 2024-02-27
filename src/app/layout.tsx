@@ -7,7 +7,10 @@ const chakra = Chakra_Petch({ subsets: ["latin"], weight: ["400", "500", "700"] 
 
 export const metadata: Metadata = {
     title: "Patka Tattoos",
-    description: "Strona osobista Patka Tattoos. Studio tatuażu"
+    description: "Strona osobista Patka Tattoos. Studio tatuażu",
+    openGraph: {
+        images: "/moth.jpg"
+    }
 };
 
 export default function RootLayout({
