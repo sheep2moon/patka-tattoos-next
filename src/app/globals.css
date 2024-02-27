@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Blaka+Ink&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -30,4 +37,50 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.font-blaka {
+  font-family: 'Blaka Ink', cursive;
+}
+
+
+.text-svg {
+  stroke:#000;
+  stroke-width:0.25mm;
+  fill:none
+}
+
+
+
+ /* Google chrome */
+ @-webkit-keyframes svg-text-anim {
+  40% {
+     stroke-dashoffset: 0;
+     fill: transparent;
+   }
+   60% {
+     stroke-dashoffset: 0;
+     fill: #FFB000;
+   }
+   100% {
+     stroke-dashoffset: 0;
+     fill: #FFB000;
+   }
+   
+}
+/* Most browsers */
+@keyframes svg-text-anim {
+  40% {
+     stroke-dashoffset: 0;
+     fill: transparent;
+   }
+   60% {
+     stroke-dashoffset: 0;
+     fill: #ffd700;
+   }
+   100% {
+     stroke-dashoffset: 0;
+     fill: #ffd700;
+   }
+   
 }
