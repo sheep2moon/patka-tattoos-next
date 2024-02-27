@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 
 import line1 from "../../public/tattoos/line1.webp";
 import line2 from "../../public/tattoos/line2.webp";
@@ -24,24 +24,40 @@ import shadow9 from "../../public/tattoos/shadow9.webp";
 import shadow10 from "../../public/tattoos/shadow10.webp";
 import shadow11 from "../../public/tattoos/shadow11.webp";
 import shadow12 from "../../public/tattoos/shadow12.webp";
-import { MotionValue, motion, useTransform } from "framer-motion";
+import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 
-type ImagesGalleryProps = {
-    scrollYProgress: MotionValue<number>;
-};
+// type ImagesGalleryProps = {
+//     scrollYProgress: MotionValue<number>;
+// };
 
-const ImagesGallery = (props: ImagesGalleryProps) => {
-    const translateY = useTransform(props.scrollYProgress, [0, 1], [0, -400]);
-    const opacity = useTransform(props.scrollYProgress, [0, 1], [0.6, 1]);
+const ImagesGallery = () => {
+    const imagesContainer = useRef(null);
+    const { scrollYProgress } = useScroll({ target: imagesContainer, offset: ["start end", "end end"] });
+    const translateY = useTransform(scrollYProgress, [0, 0.15], [0, -400]);
+    const opacity = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+    const scale = useTransform(scrollYProgress, [0, 0.1], [0.4, 1]);
     return (
-        <motion.div style={{ translateY, opacity }} className="-mb-[200px]">
-            <div className="mx-auto flex gap-1 w-screen max-w-3xl">
-                <div className="w-1/2 grid grid-cols-1 lg:grid-cols-2 gap-1">
+        <motion.div ref={imagesContainer} style={{ translateY, opacity }} className="-mb-[200px] bg-grid-small-gold/20 bg-black pt-24 flex flex-col items-center w-screen max-w-full">
+            <motion.div style={{ scale }} className="text-gold max-w-lg text-xl text-center flex flex-col gap-1 font-thin justify-center items-center ">
+                {/* <div className="inset-0 bg-grid-small-gold/40 absolute"></div> */}
+                <div className="w-40 aspect-square rounded-full relative">
+                    <Image src="/awatar.jpg" fill sizes="256 256" alt="awatar" className="rounded-full" />
+                </div>
+                <div className="relative mt-4">
+                    <p className="">
+                        Hej! Nazywam się Patrycja, przygodę z tatuażem zaczęłam w 2020r. Głównie zajmuje się niewielkimi liniowymi wzorami ale w mojej galerii znajdziecie również cieniowane prace. Zachęcam do odwiedzenia instagrama gdzie
+                        zamieszczam większość swoich dzieł.
+                    </p>
+                    <p className="font-bold">Zapraszam 💛</p>
+                </div>
+            </motion.div>
+            <div className="mx-auto mt-12 flex gap-1 w-screen max-w-3xl p-1">
+                <div className="w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-1">
                     {lineImages.map((src, index) => (
                         <TattooImage src={src} key={`line-image-${index}`} />
                     ))}
                 </div>
-                <div className="w-1/2 grid grid-cols-1 lg:grid-cols-2 gap-1">
+                <div className="w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-1">
                     {shadowImages.map((src, index) => (
                         <TattooImage src={src} key={`shadow-tattoo-${index}`} />
                     ))}

@@ -13,7 +13,7 @@ export const Lamp = ({ children, className }: { children?: React.ReactNode; clas
                 duration: 0.8,
                 ease: "easeInOut"
             }}
-            className="absolute opacity-60 inset-auto z-30 h-36 w-64 rounded-full bg-gold blur-3xl"
+            className="absolute opacity-40 inset-auto z-30 h-36 w-64 rounded-full bg-gold blur-3xl "
         ></motion.div>
     );
 };
