@@ -37,7 +37,7 @@ export default function Home() {
                         <TextAnim />
                     </div>
 
-                    <div className="flex gap-4 mt-4">
+                    <div className="flex gap-4 mt-4 z-50">
                         <MediaLink href="https://www.instagram.com/patka_tattoos">
                             <FaInstagramSquare />
                         </MediaLink>
